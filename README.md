@@ -12,7 +12,7 @@ When installing nixos:
 - run `nixos-generate-configuration` to have the
   `hardware-configuration.nix` generated.
 - modify the file `devices/luks.nix` specifying the `device` UUID
-- Add and update `nixos-hardware` channel:
+- Add these channels:
   ```
   $ sudo nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
   $ sudo nix-channel --update nixos-hardware
