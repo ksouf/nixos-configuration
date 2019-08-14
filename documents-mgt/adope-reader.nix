@@ -6,6 +6,5 @@
           adobe-reader
 		];
 	};
-
 }
 
