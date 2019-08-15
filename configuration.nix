@@ -7,7 +7,6 @@
       ./hardware-configuration.nix
       ./system-packages.nix
       ./users.nix
-      ./specific-user.nix
       ./desktop/gnome-tools.nix
       ./desktop/i3.nix
       ./devices/luks.nix
@@ -15,15 +14,18 @@
       ./devices/bluetooth.nix
       ./devices/network.nix
       ./devices/usb-tools.nix
-      ./documents-mgt/adope-reader.nix
-      ./documents-mgt/libreoffice.nix
-      ./documents-mgt/tex.nix
-      ./profiles/git.nix
       ./shell/tilix.nix
       ./shell/zsh.nix
-      ./social/slack.nix
-      ./social/spotify.nix
       ./virtualization/docker.nix
+      ./home-manager-target/documents-mgt/libreoffice.nix
+      ./home-manager-target/documents-mgt/tex.nix
+      ./home-manager-target/profiles/git.nix
+      ./home-manager-target/documents-mgt/adope-reader.nix
+      ./home-manager-target/social/slack.nix
+      ./home-manager-target/social/spotify.nix
+      ./home-manager-target/ide.nix
+      ./home-manager-target/browsers.nix
+      ./home-manager-target/user-applications.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -41,4 +43,7 @@
      defaultLocale = "fr_FR.UTF-8";
    };
    time.timeZone = "Europe/Paris";
+
+   #fixes Bug on rebuild
+   system.stateVersion = "19.03";
 }
