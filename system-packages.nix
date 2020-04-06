@@ -4,7 +4,7 @@
 	environment = {
 		systemPackages = with pkgs; [
 				       cachix
-                       direnv
+                       direnv #used for isloted environment directory
                        file
                        htop
                        iotop
@@ -18,8 +18,12 @@
                        wget
                        git
                        xorg.xbacklight
+                       #fwupd #used for updating firmware
+                       glib-networking.out #used by fwupd
 		];
 	};
+
+   #systemd.packages = [ pkgs.fwupd ];
 
    nixpkgs.config.allowUnfree = true;
 }

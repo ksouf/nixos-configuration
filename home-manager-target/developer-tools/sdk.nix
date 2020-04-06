@@ -1,13 +1,10 @@
 { config, pkgs, ... }:
-
 {
-    profiles.git.enable = true;
-	environment.systemPackages = with pkgs; [
-          git
+    environment.systemPackages = with pkgs; [
           maven
           openjdk
           adoptopenjdk-bin
           nodejs-10_x
-          gtk3-x11
+          python38Full
 	];
 }

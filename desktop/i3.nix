@@ -6,9 +6,9 @@
 			enable = true;
             layout = "fr";
             desktopManager = {
-              default = "none";
               xterm.enable = false;
             };
+            displayManager.defaultSession = "none+i3";
 			windowManager = {
 				i3 = {
 				    enable = true;
@@ -17,11 +17,14 @@
                          i3status
                          i3lock-fancy
                          (python3Packages.py3status.overrideAttrs (oldAttrs: {
-                               propagatedBuildInputs = [ python3Packages.pytz python3Packages.tzlocal ];
+                               propagatedBuildInputs = [ python3Packages.pytz python3Packages.tzlocal python3Packages.toolz python3Packages.numpy];
                          }))
                       ];
 				};
 			};
+		};
+		fwupd = {
+		  enable = true;
 		};
 	};
     fonts = {

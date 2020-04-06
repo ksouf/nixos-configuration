@@ -16,34 +16,34 @@
       ./devices/usb-tools.nix
       ./shell/tilix.nix
       ./shell/zsh.nix
-      ./virtualization/docker.nix
       ./home-manager-target/documents-mgt/libreoffice.nix
       ./home-manager-target/documents-mgt/tex.nix
-      ./home-manager-target/profiles/git.nix
       ./home-manager-target/documents-mgt/adope-reader.nix
       ./home-manager-target/social/slack.nix
       ./home-manager-target/social/spotify.nix
-      ./home-manager-target/ide.nix
+      ./home-manager-target/social/zoom.nix
+      ./home-manager-target/developer-tools/ide.nix
+      ./home-manager-target/developer-tools/vcs.nix
+      ./home-manager-target/developer-tools/sdk.nix
+      ./home-manager-target/developer-tools/virtualization.nix
+      ./home-manager-target/developer-tools/git-profile.nix
+      ./home-manager-target/developer-tools/diagram.nix
       ./home-manager-target/browsers.nix
-      ./home-manager-target/user-applications.nix
+      ./home-manager-target/pictures.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  system.autoUpgrade.enable = true;
 
-  system = {
-  		autoUpgrade = {
-  			enable = true;
-  			dates = "13:00";
-  		};
-  	};
-  i18n = {
-     consoleFont = "Lat2-Terminus16";
-     consoleKeyMap = "fr";
-     defaultLocale = "fr_FR.UTF-8";
+   console = {
+     font = "Lat2-Terminus16";
+     keyMap = "fr";
+
    };
-   time.timeZone = "Europe/Paris";
+   i18n.defaultLocale = "fr_FR.UTF-8";
+   time.timeZone = "America/Montreal";
 
    #fixes Bug on rebuild
-   system.stateVersion = "19.03";
+   system.stateVersion = "19.09";
 }

@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
+    profiles.git.enable = true;
     environment.systemPackages = with pkgs; [
-          (jetbrains.idea-ultimate.override { jdk = pkgs.jetbrains.jdk; })
+          git
 	];
 }
