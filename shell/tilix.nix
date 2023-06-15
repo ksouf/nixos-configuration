@@ -8,8 +8,6 @@
 		};
 		systemPackages = with pkgs; [
            tilix
-           python36Packages.powerline
-           powerline-fonts
 		];
 	};
 }

@@ -1,10 +1,16 @@
 { config, pkgs, ... }:
-{
-    environment.systemPackages = with pkgs; [
-          maven
-          openjdk
-          adoptopenjdk-bin
-          nodejs-10_x
-          python38Full
-	];
+let unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in {
+  environment.systemPackages = with pkgs; [
+    unstable.jdk
+    unstable.ruby
+    unstable.nodePackages_latest.nodejs
+    unstable.python3
+    #blogging
+    jekyll
+    bundler
+    ruby
+    #AWS
+    unstable.awscli2
+  ];
 }

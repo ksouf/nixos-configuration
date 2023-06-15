@@ -1,10 +1,13 @@
 { config, pkgs, ... }:
-
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in
 {
 	environment = {
 		systemPackages = with pkgs; [
-           texmaker # for resume LateX
-           texlive.combined.scheme-full
+           unstable.texmaker # for resume LateX
+           unstable.texlive.combined.scheme-full
+           unstable.biber #for bibiligraphy references
 		];
 	};
 

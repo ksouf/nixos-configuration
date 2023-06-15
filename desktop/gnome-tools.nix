@@ -3,11 +3,11 @@
 {
 	environment = {
 		systemPackages = with pkgs; [
-          gnome3.defaultIconTheme
-          gnome3.dconf
-          gnome3.gsettings-desktop-schemas
-          gnome3.gtk
-          gnome3.vte
+          gnome.adwaita-icon-theme
+          pkgs.dconf
+          pkgs.gsettings-desktop-schemas
+          pkgs.gtk3
+          pkgs.vte
           gnome3.nautilus
 		];
 	};

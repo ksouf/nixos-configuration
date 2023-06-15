@@ -17,13 +17,7 @@
                        vim
                        wget
                        git
-                       xorg.xbacklight
-                       #fwupd #used for updating firmware
-                       glib-networking.out #used by fwupd
 		];
 	};
 
-   #systemd.packages = [ pkgs.fwupd ];
-
-   nixpkgs.config.allowUnfree = true;
 }

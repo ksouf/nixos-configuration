@@ -16,19 +16,13 @@
                          dmenu
                          i3status
                          i3lock-fancy
-                         (python3Packages.py3status.overrideAttrs (oldAttrs: {
-                               propagatedBuildInputs = [ python3Packages.pytz python3Packages.tzlocal python3Packages.toolz python3Packages.numpy];
-                         }))
                       ];
 				};
 			};
 		};
-		fwupd = {
-		  enable = true;
-		};
 	};
     fonts = {
-      enableFontDir = true;
+      fontDir.enable = true;
       enableGhostscriptFonts = true;
       fonts = with pkgs; [
               corefonts

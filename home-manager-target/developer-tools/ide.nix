@@ -1,7 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ...}: 
+let unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in
 {
     environment.systemPackages = with pkgs; [
-          (jetbrains.idea-ultimate.override { jdk = pkgs.jetbrains.jdk; })
-          vscode
+          unstable.jetbrains.idea-ultimate
+          unstable.vscode
+          unstable.doctl
 	];
 }
+

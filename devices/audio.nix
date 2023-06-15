@@ -4,12 +4,11 @@
  environment.systemPackages = with pkgs; [
    pavucontrol # GUI for audio management
    apulse
+   audio-recorder
  ];
 
- hardware = {
-   pulseaudio = {
-     enable = true;
-	 package = pkgs.pulseaudioFull; #used for my blutooth headset
-   };
- };
+ hardware.pulseaudio = {
+   enable = true;
+   package = pkgs.pulseaudioFull; #used for my blutooth headset
+  };
 }
