@@ -6,11 +6,13 @@ in {
     unstable.ruby
     unstable.nodePackages_latest.nodejs
     unstable.python3
+    unstable.maven
     #blogging
     jekyll
     bundler
     ruby
     #AWS
     unstable.awscli2
+    unstable.aws-vault
   ];
 }

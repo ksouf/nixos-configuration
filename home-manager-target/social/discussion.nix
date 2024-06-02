@@ -6,6 +6,7 @@ in
 	environment = {
 		systemPackages = with pkgs; [
 		  unstable.slack
+		  unstable.discord
 		];
 	};
 }
