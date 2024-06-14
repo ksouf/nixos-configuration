@@ -2,13 +2,14 @@
 
 {
 	services = {
+	    displayManager.defaultSession = "none+i3";
 		xserver = {
 			enable = true;
-            layout = "fr";
+            xkb.layout = "fr";
             desktopManager = {
               xterm.enable = false;
             };
-            displayManager.defaultSession = "none+i3";
+
 			windowManager = {
 				i3 = {
 				    enable = true;
@@ -24,7 +25,7 @@
     fonts = {
       fontDir.enable = true;
       enableGhostscriptFonts = true;
-      fonts = with pkgs; [
+      packages = with pkgs; [
               corefonts
               dejavu_fonts
               emojione
