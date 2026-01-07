@@ -1,2 +1,36 @@
 hardware-configuration.nix
 .idea
+
+# Browser/Chromium data
+.org.chromium.Chromium.*
+Cookies
+Cookies-journal
+DIPS
+Preferences
+SharedStorage
+TransportSecurity
+Trust Tokens
+Trust Tokens-journal
+Network Persistent State
+languagepacks.json
+machineid
+
+# Cache directories
+Cache/
+CachedConfigurations/
+CachedData/
+CachedExtensionVSIXs/
+CachedProfilesData/
+Code Cache/
+Crashpad/
+DawnGraphiteCache/
+DawnWebGPUCache/
+Dictionaries/
+GPUCache/
+Local Storage/
+Service Worker/
+Session Storage/
+Shared Dictionary/
+User/
+WebStorage/
+logs/
