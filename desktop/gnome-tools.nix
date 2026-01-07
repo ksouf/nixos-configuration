@@ -8,7 +8,7 @@
           pkgs.gsettings-desktop-schemas
           pkgs.gtk3
           pkgs.vte
-          gnome3.nautilus
+          gnome.nautilus
 		];
 	};
 	programs.dconf.enable = true;

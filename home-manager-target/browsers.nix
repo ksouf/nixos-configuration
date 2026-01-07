@@ -5,5 +5,6 @@ in {
 	environment.systemPackages = with pkgs; [
           unstable.google-chrome
           unstable.brave
+          #unstable.arc-browser
 	];
 }

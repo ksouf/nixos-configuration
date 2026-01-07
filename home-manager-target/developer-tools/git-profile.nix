@@ -13,7 +13,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ git gitAndTools.git-extras ];
+    environment.systemPackages = with pkgs; [ git git-extras gh ];
     environment.etc."gitconfig" = rec {
       text = ''
         [alias]

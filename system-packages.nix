@@ -17,7 +17,7 @@
       vim
       wget
       git
-      nixfmt
+      nixfmt-classic
     ];
   };
 
