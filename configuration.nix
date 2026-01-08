@@ -4,6 +4,8 @@
   imports = [
     <nixos-hardware/dell/xps/13-9370>
     ./hardware-configuration.nix
+    ./hardware.nix
+    ./modules/security.nix
     ./system-packages.nix
     ./users.nix
     ./desktop/gnome.nix
@@ -16,6 +18,7 @@
     ./devices/network.nix
     ./devices/usb-tools.nix
     ./devices/firmware.nix
+    ./devices/keyboards.nix
     ./shell/tilix.nix
     ./shell/zsh.nix
     ./home-manager-target/documents-mgt/libreoffice.nix
@@ -50,4 +53,8 @@
   nixpkgs.config.allowUnfree = true;
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
+
+  # This value determines the NixOS release with which your system is compatible
+  # Do not change unless you know what you're doing
+  system.stateVersion = "25.11";
 }

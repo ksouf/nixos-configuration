@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # Kernel modules and parameters
+  # Kernel modules and parameters for Intel HDA
   boot.kernelModules = [
     "snd-hda-intel"
     "snd-hda-codec-hdmi"
@@ -12,24 +12,27 @@
     "snd-hda-intel.probe_mask=1"
   ];
 
-  # Sound configuration
+  # Disable PulseAudio (using PipeWire)
   services.pulseaudio.enable = false;
 
+  # PipeWire audio stack
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.enable = true;
   };
 
-  # Enable firmware
+  # Real-time scheduling for audio
+  security.rtkit.enable = true;
+
+  # Enable firmware for audio codecs
   hardware.enableRedistributableFirmware = true;
 
-  # Diagnostic packages
+  # Audio management tools
   environment.systemPackages = with pkgs; [
     alsa-utils
     pavucontrol
-    pipewire
-    wireplumber
   ];
 }

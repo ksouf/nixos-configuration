@@ -8,7 +8,8 @@ in {
     unstable.exoscale-cli
     unstable.k9s
   ];
+
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+  users.extraGroups.vboxusers.members = [ "khaled" ];
 }

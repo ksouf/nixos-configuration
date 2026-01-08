@@ -31,10 +31,15 @@ sudo nixos-rebuild switch --rollback
 
 | Directory | Purpose |
 |-----------|---------|
+| `modules/` | Core system modules (security hardening) |
 | `desktop/` | Desktop environments (GNOME active, i3/Hyprland alternatives) |
 | `devices/` | Hardware configs (audio, bluetooth, network, keyboards, LUKS encryption) |
 | `shell/` | Shell environment (Zsh with Oh-My-Zsh, Tilix terminal) |
 | `home-manager-target/` | User applications organized by category |
+
+### Key Hardware Files
+- `hardware.nix` - Hardware optimizations (Intel microcode, TLP, fstrim, zram)
+- `hardware-configuration.nix` - Auto-generated, do not edit manually
 
 ### Home Manager Target Structure
 - `developer-tools/` - IDEs, SDKs, virtualization (Docker, K8s), VCS
@@ -44,9 +49,10 @@ sudo nixos-rebuild switch --rollback
 - `browsers.nix` - Chrome, Brave
 
 ### Key Files
-- `system-packages.nix` - System-wide packages (git, vim, htop, etc.)
+- `hardware.nix` - Hardware optimizations (Intel CPU, TLP power management, fstrim)
+- `modules/security.nix` - Security hardening (firewall, SSH, kernel)
+- `system-packages.nix` - System-wide packages and modern CLI tools
 - `users.nix` - User account configuration (user: khaled)
-- `hardware-configuration.nix` - Auto-generated, do not edit manually
 
 ## Package Management Pattern
 
