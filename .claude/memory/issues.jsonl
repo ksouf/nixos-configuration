@@ -1,0 +1,2 @@
+# Issues detected by the self-improving system
+# Format: {"id": "string", "timestamp": "ISO8601", "type": "string", "file": "string", "description": "string", "severity": "low|medium|high|critical", "resolved": boolean}

@@ -1,0 +1,2 @@
+# Patterns learned by the self-improving system
+# Format: {"id": "string", "timestamp": "ISO8601", "pattern_type": "string", "description": "string", "regex": "string", "occurrences": number, "confidence": number}

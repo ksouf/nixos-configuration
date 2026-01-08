@@ -1,0 +1,2 @@
+# Metrics tracked by the self-improving system
+# Format: {"timestamp": "ISO8601", "issues_detected": number, "issues_resolved": number, "patterns_learned": number, "rules_generated": number, "evolution_cycles": number}

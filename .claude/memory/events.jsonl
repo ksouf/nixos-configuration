@@ -1,0 +1,2 @@
+# Events tracked by hooks
+# Format: {"timestamp": "ISO8601", "event": "string", ...event-specific-fields}

@@ -1,0 +1,2 @@
+# Fixes applied by the self-improving system
+# Format: {"id": "string", "timestamp": "ISO8601", "issue_id": "string", "file": "string", "description": "string", "diff_before": "string", "diff_after": "string", "success": boolean}

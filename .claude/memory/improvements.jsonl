@@ -1,0 +1,2 @@
+# Improvements suggested by the evolution system
+# Format: {"id": "string", "timestamp": "ISO8601", "type": "rule|pattern|hook", "description": "string", "content": "string", "applied": boolean}
