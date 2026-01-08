@@ -1,5 +1,9 @@
-{ config, pkgs, ... }:
-let unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+{ config, pkgs, pkgs-unstable ? null, ... }:
+let
+  # Support both flakes (pkgs-unstable) and channels (<nixos-unstable>)
+  unstable = if pkgs-unstable != null
+    then pkgs-unstable
+    else import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
   environment.systemPackages = with pkgs; [
     #unstable.jdk

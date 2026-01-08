@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable ? null, ... }:
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  unstable = if pkgs-unstable != null
+    then pkgs-unstable
+    else import <nixos-unstable> { config = { allowUnfree = true; }; };
 in {
 	environment.systemPackages = with pkgs; [
           unstable.google-chrome

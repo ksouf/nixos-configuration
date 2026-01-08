@@ -1,7 +1,11 @@
-hardware-configuration.nix
-.idea
+# NixOS auto-generated (keep in git if you want reproducible hardware config)
+# hardware-configuration.nix
 
-# Browser/Chromium data
+# IDE
+.idea/
+.vscode/
+
+# Browser/Chromium data (should not be in /etc/nixos!)
 .org.chromium.Chromium.*
 Cookies
 Cookies-journal
@@ -14,8 +18,12 @@ Trust Tokens-journal
 Network Persistent State
 languagepacks.json
 machineid
+blob_storage/
+Backups/
+IndexedDB/
+*.sock
 
-# Cache directories
+# VS Code / Electron cache
 Cache/
 CachedConfigurations/
 CachedData/
@@ -34,3 +42,7 @@ Shared Dictionary/
 User/
 WebStorage/
 logs/
+
+# Result symlinks from nix-build
+result
+result-*

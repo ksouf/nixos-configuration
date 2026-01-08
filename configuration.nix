@@ -2,7 +2,9 @@
 
 {
   imports = [
-    <nixos-hardware/dell/xps/13-9370>
+    # nixos-hardware is included via flake.nix when using flakes
+    # For channel-based builds, uncomment the line below:
+    # <nixos-hardware/dell/xps/13-9370>
     ./hardware-configuration.nix
     ./hardware.nix
     ./modules/security.nix
