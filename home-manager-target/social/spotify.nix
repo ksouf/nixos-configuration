@@ -1,11 +1,6 @@
-{ config, pkgs, ... }:
-let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-in
+{ config, pkgs, pkgs-unstable, ... }:
 {
-	environment = {
-	  systemPackages = with pkgs; [
-		  unstable.spotify
-	  ];
-	};
+  environment.systemPackages = [
+    pkgs-unstable.spotify
+  ];
 }

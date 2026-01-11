@@ -1,2 +1,6 @@
 # Metrics tracked by the self-improving system
 # Format: {"timestamp": "ISO8601", "issues_detected": number, "issues_resolved": number, "patterns_learned": number, "rules_generated": number, "evolution_cycles": number}
+{"ts":"2026-01-11T01:52:57+01:00","event":"meta_system_initialized"}
+{"ts":"2026-01-11T02:30:03+01:00","event":"build_success","fixes":["dsp_driver=1","flake-compat"]}
+{"ts":"2026-01-11T02:34:05+01:00","event":"switch_success","generation":660,"method":"manual_boot_entry"}
+{"ts":"2026-01-11T03:10:00+01:00","event":"evolution_cycle","cycle":1,"issues_analyzed":2,"fixes_analyzed":2,"patterns_detected":2,"rules_updated":2,"rules_generated":0}

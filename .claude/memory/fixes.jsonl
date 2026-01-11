@@ -1,2 +1,5 @@
 # Fixes applied by the self-improving system
 # Format: {"id": "string", "timestamp": "ISO8601", "issue_id": "string", "file": "string", "description": "string", "diff_before": "string", "diff_after": "string", "success": boolean}
+{"ts":"2026-01-11T02:30:14+01:00","file":"devices/audio.nix","before":"options snd-hda-intel power_save=0","after":"options snd-hda-intel power_save=0
+options snd_intel_dspcfg dsp_driver=1","pattern":"intel-hda-kaby-lake","validated":true}
+{"ts":"2026-01-11T03:05:00+01:00","file":"home-manager-target/developer-tools/virtualization.nix","before":"users.extraGroups.vboxusers.members = [ \"khaled\" ];","after":"users.groups.vboxusers.members = [ \"khaled\" ];","rule":"nixos-deprecations","validated":true}

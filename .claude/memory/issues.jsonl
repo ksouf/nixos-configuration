@@ -1,2 +1,4 @@
 # Issues detected by the self-improving system
 # Format: {"id": "string", "timestamp": "ISO8601", "type": "string", "file": "string", "description": "string", "severity": "low|medium|high|critical", "resolved": boolean}
+{"ts":"2026-01-11T02:30:16+01:00","sev":"error","cat":"audio","file":"devices/audio.nix","issue":"Intel HDA codec not detected - dsp_driver=0 causes SOF to interfere with legacy HDA on Kaby Lake","fix":"Set snd_intel_dspcfg dsp_driver=1 to force legacy HDA driver","resolved":true}
+{"ts":"2026-01-11T03:02:00+01:00","sev":"medium","cat":"deprecation","file":"home-manager-target/developer-tools/virtualization.nix","line":13,"rule":"nixos-deprecations","issue":"uses.extraGroups is deprecated since 23.05","fix":"Replace users.extraGroups with users.groups","resolved":true}

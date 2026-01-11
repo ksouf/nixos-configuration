@@ -1,2 +1,4 @@
 # Patterns learned by the self-improving system
 # Format: {"id": "string", "timestamp": "ISO8601", "pattern_type": "string", "description": "string", "regex": "string", "occurrences": number, "confidence": number}
+{"id":"pat-001","ts":"2026-01-11T03:10:00+01:00","type":"deprecation","desc":"users.extraGroups deprecated","regex":"users\\.extraGroups","occurrences":1,"rule":"nixos-deprecations","confidence":1.0}
+{"id":"pat-002","ts":"2026-01-11T03:10:00+01:00","type":"audio","desc":"Intel HDA codec detection failure on Kaby Lake","regex":"no codecs initialized","occurrences":1,"rule":"nixos-audio","confidence":0.95}

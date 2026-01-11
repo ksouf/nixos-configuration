@@ -1,35 +1,30 @@
-{ config, pkgs, pkgs-unstable ? null, ... }:
-let
-  # Support both flakes (pkgs-unstable) and channels (<nixos-unstable>)
-  unstable = if pkgs-unstable != null
-    then pkgs-unstable
-    else import <nixos-unstable> { config = { allowUnfree = true; }; };
-in {
-  environment.systemPackages = with pkgs; [
-    #unstable.jdk
-    #unstable.ruby
-    unstable.turbo
-    unstable.chromium
-    unstable.pandoc
-    unstable.nodejs_22
-    unstable.playwright
-    unstable.pnpm
-    #unstable.python3
-    #unstable.maven
-    #blogging
-    #jekyll
-    #bundler
-    #ruby
-    #AWS
-    #unstable.awscli2
-    #unstable.aws-vault
-    unstable.claude-code
-    unstable.yarn
-    openssl #needed for claude learning 
-    prisma-engines
+{ config, pkgs, pkgs-unstable, ... }:
+{
+  environment.systemPackages = [
+    # pkgs-unstable.jdk
+    # pkgs-unstable.ruby
+    pkgs-unstable.turbo
+    pkgs-unstable.chromium
+    pkgs-unstable.pandoc
+    pkgs-unstable.nodejs_22
+    pkgs-unstable.playwright
+    pkgs-unstable.pnpm
+    # pkgs-unstable.python3
+    # pkgs-unstable.maven
+    # blogging
+    # jekyll
+    # bundler
+    # ruby
+    # AWS
+    # pkgs-unstable.awscli2
+    # pkgs-unstable.aws-vault
+    pkgs-unstable.claude-code
+    pkgs-unstable.yarn
+    pkgs.openssl         # needed for claude learning
+    pkgs.prisma-engines
   ];
 
-    environment.variables = {
+  environment.variables = {
     PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
     PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
     PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";

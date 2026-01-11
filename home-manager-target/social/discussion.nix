@@ -1,12 +1,7 @@
-{ config, pkgs, ... }:
-let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-in
+{ config, pkgs, pkgs-unstable, ... }:
 {
-	environment = {
-		systemPackages = with pkgs; [
-		  unstable.slack
-		  unstable.discord
-		];
-	};
+  environment.systemPackages = [
+    pkgs-unstable.slack
+    pkgs-unstable.discord
+  ];
 }

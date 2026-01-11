@@ -26,8 +26,12 @@
     alsa-firmware
   ];
 
-  # Prevent audio cutouts when idle (power saving can cause issues)
+  # Dell XPS 13 9370 audio codec issue - known kernel bug since 5.4
+  # The internal codec (ALC256) often fails to initialize on boot
+  # See: https://wiki.archlinux.org/title/Dell_XPS_13_(9370)
+  # Workaround: Use USB audio (dock) or Bluetooth headphones
   boot.extraModprobeConfig = ''
+    options snd_intel_dspcfg dsp_driver=1
     options snd-hda-intel power_save=0
   '';
 

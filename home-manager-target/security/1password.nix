@@ -1,12 +1,7 @@
-{ config, pkgs, ... }:
-let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-in
+{ config, pkgs, pkgs-unstable, ... }:
 {
-	environment = {
-		systemPackages = with pkgs; [
-		  unstable._1password-cli
-		  unstable._1password-gui
-		];
-	};
+  environment.systemPackages = [
+    pkgs-unstable._1password-cli
+    pkgs-unstable._1password-gui
+  ];
 }

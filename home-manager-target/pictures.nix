@@ -1,9 +1,6 @@
-{ config, pkgs, ... }:
-let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-in
+{ config, pkgs, pkgs-unstable, ... }:
 {
-    environment.systemPackages = with pkgs; [
-          unstable.darktable
-	];
+  environment.systemPackages = [
+    pkgs-unstable.darktable
+  ];
 }
