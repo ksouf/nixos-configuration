@@ -67,3 +67,5 @@
 {"timestamp": "2026-01-15T10:41:07+01:00", "event": "edit", "file": "unknown", "tool": "Edit"}
 {"timestamp": "2026-01-15T10:41:41+01:00", "event": "edit", "file": "unknown", "tool": "Edit"}
 {"timestamp": "2026-01-15T10:42:03+01:00", "event": "edit", "file": "unknown", "tool": "Edit"}
+{"timestamp": "2026-01-15T10:47:46+01:00", "event": "pre-commit-passed"}
+{"timestamp": "2026-01-15T10:47:54+01:00", "event": "pre-commit-passed"}
