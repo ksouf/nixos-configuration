@@ -18,7 +18,7 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  sound.enable = true;
+  # sound.enable removed - deprecated since 24.05, PipeWire handles audio
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

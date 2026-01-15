@@ -200,3 +200,102 @@ Hooks trigger on Claude Code events:
 3. **Use flake-compatible pattern** for unstable packages (`pkgs-unstable ? null`)
 4. **Validate changes** with `nix-instantiate --parse` before committing
 5. **Check deprecations** against `.claude/rules/nixos-deprecations.md`
+
+---
+
+## Triple Iteration Protocol
+
+Every task requires iteration cycles for validation and continuous improvement.
+
+### Cycle 1: Configuration Validation (`/iterate`)
+```bash
+# 1. Syntax check modified files
+for f in $(git diff --name-only HEAD -- "*.nix"); do
+  nix-instantiate --parse "$f" || exit 1
+done
+
+# 2. Flake check
+nix flake check
+
+# 3. Build test
+sudo nixos-rebuild build --flake /etc/nixos#hanibal
+```
+
+**Pass criteria:**
+- [ ] All syntax checks pass
+- [ ] Flake check passes
+- [ ] Build succeeds
+
+### Cycle 2: Self-Improvement (`/improve`)
+Check 18 rules (S1-S5, A1-A5, H1-H4, R1-R5, K1-K3):
+
+| Category | Rules | Focus |
+|----------|-------|-------|
+| Skills | S1-S5 | Skill coverage and accuracy |
+| Agents | A1-A5 | Agent effectiveness |
+| Hooks | H1-H4 | Automation opportunities |
+| Rules | R1-R5 | Documentation completeness |
+| Knowledge | K1-K3 | Learning capture |
+
+For each triggered rule, apply the action and log to `.claude/memory/improvements.jsonl`.
+
+### Cycle 3: Meta-Improvement (`/meta`)
+Run every 5 tasks or when improvement rate declines:
+- Analyze rule effectiveness
+- Detect automation gaps
+- Generate and implement proposals
+
+### Definition of Done
+- [ ] Cycle 1: Build passes
+- [ ] Cycle 2: Rules checked, improvements committed
+- [ ] Cycle 3: Meta-analysis done (if due)
+
+---
+
+## Critical Rules
+
+### NEVER Do
+- Modify `hardware-configuration.nix` (auto-generated)
+- Remove boot configuration without backup
+- Enable conflicting services (PulseAudio + PipeWire, TLP + power-profiles-daemon)
+- Commit secrets or passwords in plain text
+- Skip validation before rebuild
+- Delete all generations (keep 3+ for rollback)
+
+### ALWAYS Do
+- Run `nix-instantiate --parse` after every .nix edit
+- Run `nix flake check` before committing
+- Test with `nixos-rebuild build` before `switch`
+- Use `lib.mkIf` for conditional configurations
+- Use `lib.mkEnableOption` for optional features
+- Include `lib` in module arguments when using lib functions
+- Include `...` in function arguments to allow extra args
+
+---
+
+## Command Reference
+
+| Command | Purpose | Frequency |
+|---------|---------|-----------|
+| `/iterate` | Cycle 1: Validate | Every task |
+| `/improve` | Cycle 2: 18 rules | Every task |
+| `/meta` | Cycle 3: Meta-improve | Every 5 tasks |
+| `/complete` | All cycles | Every task |
+| `/audit` | Full config scan | As needed |
+| `/fix` | Auto-fix issues | After audit |
+| `/gaps` | Find automation gaps | Weekly |
+| `/proposals` | View/manage proposals | Weekly |
+| `/health` | System dashboard | Weekly |
+| `/report` | Session summary | End of session |
+| `/status` | Quick status check | As needed |
+| `/patterns` | View learned patterns | As needed |
+| `/evolve` | Trigger evolution | As needed |
+
+---
+
+## Known Conflicts
+
+| Conflict | Symptom | Resolution |
+|----------|---------|------------|
+| PulseAudio + PipeWire | No audio, crashes | `hardware.pulseaudio.enable = lib.mkForce false` |
+| TLP + power-profiles-daemon | Battery issues | `services.power-profiles-daemon.enable = false` |
