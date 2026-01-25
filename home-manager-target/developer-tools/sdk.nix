@@ -18,6 +18,8 @@
     # AWS
     # pkgs-unstable.awscli2
     # pkgs-unstable.aws-vault
+    # Infrastructure
+    pkgs-unstable.terraform
     pkgs-unstable.claude-code
     pkgs-unstable.yarn
     pkgs.openssl         # needed for claude learning

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# On-task-complete hook: Reminds about dual/triple iteration protocol
+# v3.0 - Triple iteration reminder with meta trigger
 
 MEMORY_DIR="/etc/nixos/.claude/memory"
 
@@ -9,27 +9,27 @@ LAST_META=$(grep -c '"event":"meta_cycle"' "$MEMORY_DIR/evolution.jsonl" 2>/dev/
 TASKS_SINCE_META=$((TASK_COUNT - LAST_META * 5))
 
 echo ""
-echo "ITERATION CYCLES REQUIRED"
-echo "========================="
+echo "╔═══════════════════════════════════════════════════════════════╗"
+echo "║            TRIPLE ITERATION PROTOCOL (v3.0)                   ║"
+echo "╚═══════════════════════════════════════════════════════════════╝"
 echo ""
-echo "CYCLE 1: /iterate"
-echo "  - Syntax check modified .nix files"
-echo "  - nix flake check"
-echo "  - nixos-rebuild build"
+echo "  CYCLE 1: /iterate    - Validate changes"
+echo "    • Syntax check modified .nix files"
+echo "    • nix flake check"
+echo "    • nixos-rebuild build"
 echo ""
-echo "CYCLE 2: /improve"
-echo "  - Check 18 rules (S1-K3)"
-echo "  - Apply improvements"
-echo "  - Commit changes"
+echo "  CYCLE 2: /improve    - Check 18 rules (S1-K3)"
+echo "    • Apply improvements"
+echo "    • Commit changes"
 
 if [ "$TASKS_SINCE_META" -ge 5 ]; then
     echo ""
-    echo "CYCLE 3: /meta (DUE)"
-    echo "  $TASKS_SINCE_META tasks since last meta-analysis"
+    echo "  ⚡ CYCLE 3: /meta     - META-IMPROVEMENT DUE!"
+    echo "     ($TASKS_SINCE_META tasks since last meta-analysis)"
 fi
 
 echo ""
-echo "========================="
-echo "Run /complete for all cycles"
-
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  Run /complete for all cycles"
+echo ""
 exit 0
