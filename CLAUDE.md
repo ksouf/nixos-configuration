@@ -6,6 +6,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a NixOS configuration repository for a Dell XPS 13-9370 developer workstation. The system uses declarative configuration with modular organization and Nix Flakes.
 
+## Git Operations
+
+Always run git push as user `khaled` (not root):
+```bash
+sudo -u khaled git push
+```
+
 ## Build Commands
 
 ```bash
@@ -263,6 +270,7 @@ Run every 5 tasks or when improvement rate declines:
 - Delete all generations (keep 3+ for rollback)
 
 ### ALWAYS Do
+- Use `sudo -u khaled git push` for pushing (not root)
 - Run `nix-instantiate --parse` after every .nix edit
 - Run `nix flake check` before committing
 - Test with `nixos-rebuild build` before `switch`
