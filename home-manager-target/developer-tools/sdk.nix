@@ -20,6 +20,8 @@
     # pkgs-unstable.aws-vault
     # Infrastructure
     pkgs-unstable.terraform
+    pkgs-unstable.azure-cli
+    pkgs-unstable.scaleway-cli
     pkgs-unstable.claude-code
     pkgs-unstable.yarn
     pkgs.openssl         # needed for claude learning

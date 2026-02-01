@@ -1,17 +1,12 @@
 {pkgs, ...}:
 {
-  programs.hyprland = {# or wayland.windowManager.hyprland
+  programs.hyprland = {
     enable = true;
-    nvidiaPatches = true;
     xwayland.enable = true;
   };
 
   hardware = {
-    # Opengl
-    opengl.enable = true;
-
-    # Most wayland compositors need this
-    nvidia.modesetting.enable = true;
+    graphics.enable = true;
   };
 
   # XDG portal

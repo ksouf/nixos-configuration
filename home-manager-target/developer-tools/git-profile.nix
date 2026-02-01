@@ -1,7 +1,8 @@
 { config, lib, pkgs, ... }:
 
-with lib;
-let cfg = config.profiles.git;
+let
+  inherit (lib) mkOption mkIf types;
+  cfg = config.profiles.git;
 in {
   options = {
     profiles.git = {
@@ -14,14 +15,14 @@ in {
   };
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ git git-extras gh ];
-    environment.etc."gitconfig" = rec {
+    environment.etc."gitconfig" = {
       text = ''
         [alias]
             co = checkout
             st = status
             ci = commit --signoff
             ca = commit --amend
-            b = branc --color -v
+            b = branch --color -v
             br = branch
             unstage = reset HEAD
             lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
