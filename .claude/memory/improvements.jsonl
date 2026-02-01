@@ -1,2 +1,8 @@
 # Improvements suggested by the evolution system
 # Format: {"id": "string", "timestamp": "ISO8601", "type": "rule|pattern|hook", "description": "string", "content": "string", "applied": boolean}
+{"ts":"2026-02-01T11:30:00+01:00","rule":"H2","type":"hook","description":"post-edit.sh hook broken - file path always unknown","fix":"Read JSON from stdin instead of env vars to get tool_input.file_path","applied":true}
+{"ts":"2026-02-01T11:30:00+01:00","rule":"H4","type":"hook","description":"No pre-rebuild validation hook","fix":"Created pre-rebuild.sh that validates syntax and runs flake check before nixos-rebuild switch/test","applied":true}
+{"ts":"2026-02-01T11:30:00+01:00","rule":"H1","type":"hook","description":"Improvement rules never triggered - no automatic logging","fix":"Updated on-task-complete.sh to log task_complete events to metrics.jsonl","applied":true}
+{"ts":"2026-02-01T11:30:00+01:00","rule":"R5","type":"rule","description":"hardware.opengl.enable deprecation missing from nixos-deprecations.md","fix":"Added hardware.opengl.enable and nvidiaPatches to deprecations table","applied":true}
+{"ts":"2026-02-01T11:30:00+01:00","rule":"K1","type":"knowledge","description":"Claude Code hooks receive JSON on stdin, not env vars","fix":"Documented in post-edit.sh comments; hooks must use jq to parse tool_input","applied":true}
+{"ts":"2026-02-01T11:30:00+01:00","rule":"R2","type":"rule","description":"CLAUDE.md rules violated - missing lib in args, top-level with lib","fix":"Fixed in configuration.nix and git-profile.nix during audit fix cycle","applied":true}

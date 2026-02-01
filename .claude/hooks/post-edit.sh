@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
 # Post-edit hook: Triggered after Claude Code edits a file
 # Records the edit in memory and validates Nix syntax
+# Input: JSON on stdin from Claude Code hooks API
 
 MEMORY_DIR="/etc/nixos/.claude/memory"
 TIMESTAMP=$(date -Iseconds)
 
-# Get file info from environment (if provided by Claude Code hooks)
-FILE_PATH="${CLAUDE_EDIT_FILE:-unknown}"
-TOOL_NAME="${CLAUDE_TOOL_NAME:-Edit}"
+# Read JSON from stdin
+INPUT=$(cat)
+
+# Extract file_path from tool_input using grep/sed (no jq dependency)
+FILE_PATH=$(echo "$INPUT" | grep -o '"file_path":"[^"]*"' | head -1 | sed 's/"file_path":"//;s/"$//')
+TOOL_NAME=$(echo "$INPUT" | grep -o '"tool_name":"[^"]*"' | head -1 | sed 's/"tool_name":"//;s/"$//')
+: "${FILE_PATH:=unknown}"
+: "${TOOL_NAME:=Edit}"
 
 # Log the edit event
 echo "{\"timestamp\": \"$TIMESTAMP\", \"event\": \"edit\", \"file\": \"$FILE_PATH\", \"tool\": \"$TOOL_NAME\"}" >> "$MEMORY_DIR/events.jsonl" 2>/dev/null || true
