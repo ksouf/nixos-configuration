@@ -2,3 +2,6 @@
 # Format: {"id": "string", "timestamp": "ISO8601", "pattern_type": "string", "description": "string", "regex": "string", "occurrences": number, "confidence": number}
 {"id":"pat-001","ts":"2026-01-11T03:10:00+01:00","type":"deprecation","desc":"users.extraGroups deprecated","regex":"users\\.extraGroups","occurrences":1,"rule":"nixos-deprecations","confidence":1.0}
 {"id":"pat-002","ts":"2026-01-11T03:10:00+01:00","type":"audio","desc":"Intel HDA codec detection failure on Kaby Lake","regex":"no codecs initialized","occurrences":1,"rule":"nixos-audio","confidence":0.95}
+{"id":"pat-003","ts":"2026-02-01T11:02:00+01:00","type":"deprecation","desc":"hardware.opengl.enable deprecated in 24.11","regex":"hardware\\.opengl\\.enable","occurrences":1,"rule":"nixos-deprecations","confidence":1.0}
+{"id":"pat-004","ts":"2026-02-01T11:02:00+01:00","type":"nix-language","desc":"Top-level with lib breaks static analysis","regex":"^with lib;","occurrences":1,"rule":"nixos-nix-language","confidence":1.0}
+{"id":"pat-005","ts":"2026-02-01T11:02:00+01:00","type":"modules","desc":"Missing lib in module function arguments","regex":"\\{ config, pkgs, \\.\\.\\.","occurrences":1,"rule":"nixos-modules","confidence":0.7}

@@ -7,3 +7,8 @@
 {"ts":"2026-01-15T11:04:08+01:00","type":"meta_cycle","rules_checked":18,"proposals_generated":0,"patterns_reviewed":4}
 {"ts":"2026-01-25T08:13:21+01:00","event":"v3_upgrade_complete","version":"3.0"}
 {"ts":"2026-01-25T08:41:17+01:00","event":"build_success","action":"flake_update","generation":"25.11.20260122"}
+{"ts":"2026-02-01T11:05:00+01:00","event":"evolution_cycle","cycle":2,"issues_analyzed":9,"fixes_analyzed":8,"patterns_detected":3,"rules_updated":1,"rules_generated":0}
+{"ts":"2026-02-01T11:05:00+01:00","type":"confidence_update","pattern":"D9-opengl","attempts":1,"successes":1,"confidence":0.2}
+{"ts":"2026-02-01T11:05:00+01:00","type":"confidence_update","pattern":"NL1-with-lib","attempts":1,"successes":1,"confidence":0.2}
+{"ts":"2026-02-01T11:05:00+01:00","type":"confidence_update","pattern":"NL2-unnecessary-rec","attempts":1,"successes":1,"confidence":0.2}
+{"ts":"2026-02-01T11:05:00+01:00","type":"confidence_update","pattern":"MOD1-missing-lib-arg","attempts":1,"successes":1,"confidence":0.2}

@@ -16,6 +16,8 @@ Check for these deprecated options and suggest modern alternatives:
 | `services.xserver.xkbOptions` | `services.xserver.xkb.options` | 24.05 |
 | `sound.mediaKeys.enable` | Removed (handled by DE) | 24.05 |
 | `networking.useDHCP` (global) | Per-interface DHCP | 23.05 |
+| `hardware.opengl.enable` | `hardware.graphics.enable` | 24.11 |
+| `programs.hyprland.nvidiaPatches` | Removed | 24.05 |
 | `nixpkgs.config.packageOverrides` | `nixpkgs.overlays` | Recommended |
 
 ## Fix

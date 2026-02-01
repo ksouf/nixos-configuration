@@ -3,3 +3,9 @@
 {"ts":"2026-01-11T02:30:14+01:00","file":"devices/audio.nix","before":"options snd-hda-intel power_save=0","after":"options snd-hda-intel power_save=0
 options snd_intel_dspcfg dsp_driver=1","pattern":"intel-hda-kaby-lake","validated":true}
 {"ts":"2026-01-11T03:05:00+01:00","file":"home-manager-target/developer-tools/virtualization.nix","before":"users.extraGroups.vboxusers.members = [ \"khaled\" ];","after":"users.groups.vboxusers.members = [ \"khaled\" ];","rule":"nixos-deprecations","validated":true}
+{"ts":"2026-02-01T11:02:00+01:00","file":"desktop/hyprland.nix","before":"opengl.enable = true","after":"graphics.enable = true","rule":"nixos-deprecations","validated":true}
+{"ts":"2026-02-01T11:02:00+01:00","file":"desktop/hyprland.nix","before":"nvidia.modesetting.enable = true; nvidiaPatches = true","after":"removed","rule":"nixos-modules","validated":true}
+{"ts":"2026-02-01T11:02:00+01:00","file":"home-manager-target/developer-tools/git-profile.nix","before":"with lib;","after":"inherit (lib) mkOption mkIf types;","rule":"nixos-nix-language","validated":true}
+{"ts":"2026-02-01T11:02:00+01:00","file":"home-manager-target/developer-tools/git-profile.nix","before":"environment.etc.\"gitconfig\" = rec {","after":"environment.etc.\"gitconfig\" = {","rule":"nixos-nix-language","validated":true}
+{"ts":"2026-02-01T11:02:00+01:00","file":"home-manager-target/developer-tools/git-profile.nix","before":"b = branc --color -v","after":"b = branch --color -v","rule":"code-quality","validated":true}
+{"ts":"2026-02-01T11:02:00+01:00","file":"configuration.nix","before":"{ config, pkgs, ... }:","after":"{ config, lib, pkgs, ... }:","rule":"nixos-modules","validated":true}
