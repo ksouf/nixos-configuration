@@ -15,6 +15,8 @@ grep -rHn "users\.extraGroups" /etc/nixos --include="*.nix"
 grep -rHn "sound\.enable" /etc/nixos --include="*.nix"
 grep -rHn "hardware\.pulseaudio\.enable = true" /etc/nixos --include="*.nix"
 grep -rHn "gnome3\." /etc/nixos --include="*.nix"
+grep -rHn "hardware\.opengl\.enable" /etc/nixos --include="*.nix"
+grep -rHn "nvidiaPatches" /etc/nixos --include="*.nix"
 ```
 
 ## Deprecation Table
@@ -32,6 +34,8 @@ grep -rHn "gnome3\." /etc/nixos --include="*.nix"
 | `nixfmt` | `nixfmt-classic` | 24.05 |
 | `1password-cli` | `_1password-cli` | 24.05 |
 | `sound.mediaKeys.enable` | Removed (handled by DE) | 24.05 |
+| `hardware.opengl.enable` | `hardware.graphics.enable` | 24.11 |
+| `programs.hyprland.nvidiaPatches` | Removed | 24.05 |
 
 ## Auto-Fix Patterns
 
