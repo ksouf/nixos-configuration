@@ -5,7 +5,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    git-extras
     git-lfs
     gh
   ];

@@ -15,7 +15,7 @@
     ./devices/usb-tools.nix
     ./devices/firmware.nix
     ./devices/keyboards.nix
-    ./shell/tilix.nix
+    ./shell/ghostty.nix
     ./shell/zsh.nix
     ./apps/documents.nix
     ./apps/social.nix

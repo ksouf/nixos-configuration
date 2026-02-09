@@ -3,11 +3,11 @@
 {
   environment = {
     variables = {
-      EDITOR = lib.mkForce "vim";
-      TERMINAL = "tilix";
+      EDITOR = lib.mkForce "nvim";
+      TERMINAL = "ghostty";
     };
     systemPackages = with pkgs; [
-      tilix
+      ghostty
     ];
   };
 }

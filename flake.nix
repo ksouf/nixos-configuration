@@ -45,7 +45,7 @@
       devShells.${system}.default = nixpkgs.legacyPackages.${system}.mkShell {
         packages = with nixpkgs.legacyPackages.${system}; [
           nil           # Nix LSP
-          nixpkgs-fmt   # Nix formatter
+          nixfmt-rfc-style  # Official Nix formatter
         ];
       };
     };

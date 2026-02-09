@@ -5,7 +5,7 @@
     systemPackages = with pkgs; [
       # Nix tools
       cachix
-      nixfmt-classic
+      nixfmt-rfc-style
 
       # Shell utilities
       direnv
@@ -15,7 +15,6 @@
       wget
 
       # System monitoring
-      htop
       btop
       iotop
       lsof
@@ -42,7 +41,7 @@
       iw          # Wireless tools
 
       # Editor
-      vim
+      neovim
     ];
   };
 
