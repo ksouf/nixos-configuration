@@ -13,7 +13,6 @@
       tmux
       tree
       wget
-      git
 
       # System monitoring
       htop

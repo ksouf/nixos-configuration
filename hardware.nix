@@ -10,6 +10,12 @@
   # Detected: vendor_id = GenuineIntel (Intel Core i7-8550U Kaby Lake)
   hardware.cpu.intel.updateMicrocode = true;
 
+  # Systemd in initrd for faster, more reliable boot
+  boot.initrd.systemd.enable = true;
+
+  # Distribute hardware interrupts across CPU cores
+  services.irqbalance.enable = true;
+
   # Disable power-profiles-daemon (conflicts with TLP, enabled by nixos-hardware)
   services.power-profiles-daemon.enable = false;
 

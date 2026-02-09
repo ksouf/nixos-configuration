@@ -34,7 +34,7 @@
     execWheelOnly = true;
   };
 
-  # Kernel hardening (conservative - compatible with most software)
+  # Kernel hardening
   boot.kernel.sysctl = {
     # Restrict kernel pointer exposure
     "kernel.kptr_restrict" = 2;
@@ -44,7 +44,30 @@
     "kernel.sysrq" = 176;
     # Protect against SUID core dumps
     "fs.suid_dumpable" = 0;
+
+    # Network hardening - prevent ICMP redirect attacks
+    "net.ipv4.conf.all.accept_redirects" = false;
+    "net.ipv4.conf.default.accept_redirects" = false;
+    "net.ipv6.conf.all.accept_redirects" = false;
+    "net.ipv6.conf.default.accept_redirects" = false;
+    "net.ipv4.conf.all.send_redirects" = false;
+    # Strict reverse path filtering (anti-spoofing)
+    "net.ipv4.conf.all.rp_filter" = 1;
+
+    # BPF hardening
+    "kernel.unprivileged_bpf_disabled" = 1;
+    "net.core.bpf_jit_harden" = 2;
+
+    # Filesystem hardening
+    "fs.protected_fifos" = 2;
+    "fs.protected_regular" = 2;
   };
+
+  # Disable core dumps (prevent leaking sensitive memory)
+  systemd.coredump.enable = false;
+
+  # Modern D-Bus implementation (faster, more secure)
+  services.dbus.implementation = "broker";
 
   # Fail2ban for SSH protection (optional, enable if exposed to internet)
   # services.fail2ban.enable = true;

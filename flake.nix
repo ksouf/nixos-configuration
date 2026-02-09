@@ -22,10 +22,6 @@
         config.allowUnfree = true;
       };
 
-      # Helper to make <nixos-unstable> work in modules
-      unstableOverlay = final: prev: {
-        unstable = pkgs-unstable;
-      };
     in
     {
       nixosConfigurations.hanibal = nixpkgs.lib.nixosSystem {
@@ -37,20 +33,11 @@
         };
 
         modules = [
-          # Apply overlay so unstable packages are available
-          { nixpkgs.overlays = [ unstableOverlay ]; }
-
           # Hardware-specific configuration from nixos-hardware
           nixos-hardware.nixosModules.dell-xps-13-9370
 
           # Main configuration
           ./configuration.nix
-
-          # Override the unstable channel imports with flake-based approach
-          {
-            # This module provides pkgs-unstable to replace <nixos-unstable> imports
-            _module.args.pkgs-unstable = pkgs-unstable;
-          }
         ];
       };
 
