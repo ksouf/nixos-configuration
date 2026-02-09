@@ -46,18 +46,19 @@ cd /etc/nixos && nix flake update
 | `desktop/` | Desktop environments (GNOME active, i3/Hyprland alternatives) |
 | `devices/` | Hardware configs (audio, bluetooth, network, keyboards, LUKS encryption) |
 | `shell/` | Shell environment (Zsh with Oh-My-Zsh, Tilix terminal) |
-| `home-manager-target/` | User applications organized by category |
+| `apps/` | User applications organized by category |
 | `.claude/` | Self-improving automation system |
 
 ### Key Hardware Files
 - `hardware.nix` - Hardware optimizations (Intel microcode, TLP, fstrim, zram)
 - `hardware-configuration.nix` - Auto-generated, do not edit manually
 
-### Home Manager Target Structure
-- `developer-tools/` - IDEs, SDKs, virtualization (Docker, K8s), VCS
-- `documents-mgt/` - LibreOffice, LaTeX
+### Apps Structure
+- `developer-tools/` - Git, IDEs, SDKs, virtualization (Docker, K8s)
 - `security/` - 1Password
-- `social/` - Slack, Discord, Zoom, Spotify
+- `social.nix` - Slack, Discord, Zoom, Spotify
+- `documents.nix` - LibreOffice, LaTeX
+- `graphics.nix` - Darktable, DrawIO
 - `browsers.nix` - Chrome, Brave
 
 ### Key Files
@@ -72,18 +73,14 @@ The configuration uses flakes with two nixpkgs inputs:
 - **nixpkgs** (stable 25.11) - Base system packages
 - **nixpkgs-unstable** - Newer versions for frequently-updated apps
 
-To use unstable packages in a module (flake-compatible):
+To use unstable packages in a module:
 ```nix
-{ config, pkgs, pkgs-unstable ? null, ... }:
-let
-  # Support both flakes (pkgs-unstable) and channels (<nixos-unstable>)
-  unstable = if pkgs-unstable != null
-    then pkgs-unstable
-    else import <nixos-unstable> { config = { allowUnfree = true; }; };
-in {
-  environment.systemPackages = with pkgs; [
-    stable-package
-    unstable.newer-package
+{ config, pkgs, pkgs-unstable, ... }:
+
+{
+  environment.systemPackages = [
+    pkgs.stable-package
+    pkgs-unstable.newer-package
   ];
 }
 ```
@@ -91,7 +88,7 @@ in {
 ## Adding New Configurations
 
 ### New Application
-1. Create or edit appropriate file in `home-manager-target/`
+1. Create or edit appropriate file in `apps/`
 2. Import it in `configuration.nix`
 3. Run `sudo nixos-rebuild switch --flake /etc/nixos#hanibal`
 

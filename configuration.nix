@@ -2,9 +2,6 @@
 
 {
   imports = [
-    # nixos-hardware is included via flake.nix when using flakes
-    # For channel-based builds, uncomment the line below:
-    # <nixos-hardware/dell/xps/13-9370>
     ./hardware-configuration.nix
     ./hardware.nix
     ./modules/security.nix
@@ -20,20 +17,15 @@
     ./devices/keyboards.nix
     ./shell/tilix.nix
     ./shell/zsh.nix
-    ./home-manager-target/documents-mgt/libreoffice.nix
-    ./home-manager-target/documents-mgt/tex.nix
-    ./home-manager-target/social/discussion.nix
-    ./home-manager-target/social/spotify.nix
-    ./home-manager-target/social/zoom.nix
-    ./home-manager-target/security/1password.nix
-    ./home-manager-target/developer-tools/ide.nix
-    ./home-manager-target/developer-tools/vcs.nix
-    ./home-manager-target/developer-tools/sdk.nix
-    ./home-manager-target/developer-tools/virtualization.nix
-    ./home-manager-target/developer-tools/git-profile.nix
-    ./home-manager-target/developer-tools/diagram.nix
-    ./home-manager-target/browsers.nix
-    ./home-manager-target/pictures.nix
+    ./apps/documents.nix
+    ./apps/social.nix
+    ./apps/security/1password.nix
+    ./apps/developer-tools/ide.nix
+    ./apps/developer-tools/sdk.nix
+    ./apps/developer-tools/virtualization.nix
+    ./apps/developer-tools/git.nix
+    ./apps/browsers.nix
+    ./apps/graphics.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -42,18 +34,14 @@
   console = {
     font = "Lat2-Terminus16";
     keyMap = "fr";
-
   };
 
   i18n.defaultLocale = "fr_FR.UTF-8";
   time.timeZone = "Europe/Paris";
 
-  nixpkgs.config.allowUnfree = true;
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
   system.autoUpgrade.flake = "/etc/nixos#hanibal";
-
-  profiles.git.enable = true;
 
   # This value determines the NixOS release with which your system is compatible
   # Do not change unless you know what you're doing
