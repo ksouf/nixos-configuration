@@ -11,9 +11,6 @@
     ./system-packages.nix
     ./users.nix
     ./desktop/gnome.nix
-    #./desktop/gnome-tools.nix
-    #./desktop/i3.nix
-    #./desktop/hyprland.nix
     ./devices/luks.nix
     ./devices/audio.nix
     ./devices/bluetooth.nix
@@ -26,7 +23,6 @@
     ./home-manager-target/documents-mgt/libreoffice.nix
     ./home-manager-target/documents-mgt/tex.nix
     ./home-manager-target/social/discussion.nix
-    #./home-manager-target/social/ms-teams.nix
     ./home-manager-target/social/spotify.nix
     ./home-manager-target/social/zoom.nix
     ./home-manager-target/security/1password.nix
