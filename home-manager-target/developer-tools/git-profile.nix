@@ -59,7 +59,7 @@ in {
             email = khaled.souf@gmail.com
 
         [http]
-                cookiefile = /home/khaled/.gitcookies
+                cookiefile = ${config.users.users.khaled.home}/.gitcookies
         	
         [url "git@github.com:"]
             pushInsteadOf = git://github.com/

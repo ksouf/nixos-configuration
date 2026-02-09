@@ -3,12 +3,12 @@
 {
 	environment = {
 		systemPackages = with pkgs; [
-          gnome.adwaita-icon-theme
-          pkgs.dconf
-          pkgs.gsettings-desktop-schemas
-          pkgs.gtk3
-          pkgs.vte
-          gnome.nautilus
+          adwaita-icon-theme
+          dconf
+          gsettings-desktop-schemas
+          gtk3
+          vte
+          nautilus
 		];
 	};
 	programs.dconf.enable = true;

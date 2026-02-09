@@ -55,6 +55,9 @@
   nixpkgs.config.allowUnfree = true;
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
+  system.autoUpgrade.flake = "/etc/nixos#hanibal";
+
+  profiles.git.enable = true;
 
   # This value determines the NixOS release with which your system is compatible
   # Do not change unless you know what you're doing

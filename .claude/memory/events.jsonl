@@ -114,3 +114,14 @@
 {"timestamp": "2026-02-01T16:25:33+01:00", "event": "pre-commit-passed"}
 {"timestamp": "2026-02-07T20:31:08+01:00", "event": "pre-rebuild-passed"}
 {"timestamp": "2026-02-09T13:56:34+01:00", "event": "pre-rebuild-passed"}
+{"timestamp": "2026-02-09T15:14:51+01:00", "event": "pre-commit-passed"}
+{"timestamp": "2026-02-09T15:39:10+01:00", "event": "edit", "file": "/etc/nixos/.claude/memory/issues.jsonl", "tool": "Edit"}
+{"timestamp": "2026-02-09T15:40:20+01:00", "event": "edit", "file": "/etc/nixos/desktop/gnome-tools.nix", "tool": "Edit"}
+{"timestamp": "2026-02-09T15:40:21+01:00", "event": "edit", "file": "/etc/nixos/desktop/i3.nix", "tool": "Edit"}
+{"timestamp": "2026-02-09T15:40:21+01:00", "event": "edit", "file": "/etc/nixos/shell/tilix.nix", "tool": "Edit"}
+{"timestamp": "2026-02-09T15:40:21+01:00", "event": "edit", "file": "/etc/nixos/configuration.nix", "tool": "Edit"}
+{"timestamp": "2026-02-09T15:40:21+01:00", "event": "edit", "file": "/etc/nixos/desktop/hyprland.nix", "tool": "Edit"}
+{"timestamp": "2026-02-09T15:40:23+01:00", "event": "edit", "file": "/etc/nixos/desktop/hyprland.nix", "tool": "Edit"}
+{"timestamp": "2026-02-09T15:40:24+01:00", "event": "edit", "file": "/etc/nixos/home-manager-target/developer-tools/git-profile.nix", "tool": "Edit"}
+{"timestamp": "2026-02-09T16:56:44+01:00", "event": "edit", "file": "/etc/nixos/.claude/memory/fixes.jsonl", "tool": "Edit"}
+{"timestamp": "2026-02-09T16:56:51+01:00", "event": "edit", "file": "/etc/nixos/.claude/memory/issues.jsonl", "tool": "Edit"}
