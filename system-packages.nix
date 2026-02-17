@@ -10,6 +10,7 @@
       # Shell utilities
       direnv
       file
+      jq
       tmux
       tree
       wget
