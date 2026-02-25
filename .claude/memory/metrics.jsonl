@@ -12,3 +12,6 @@
 {"ts":"2026-02-01T11:05:00+01:00","type":"confidence_update","pattern":"NL1-with-lib","attempts":1,"successes":1,"confidence":0.2}
 {"ts":"2026-02-01T11:05:00+01:00","type":"confidence_update","pattern":"NL2-unnecessary-rec","attempts":1,"successes":1,"confidence":0.2}
 {"ts":"2026-02-01T11:05:00+01:00","type":"confidence_update","pattern":"MOD1-missing-lib-arg","attempts":1,"successes":1,"confidence":0.2}
+{"ts":"2026-02-16T22:15:00+01:00","event":"flake_update","inputs":["nixpkgs","nixpkgs-unstable","nixos-hardware"],"generation":"25.11.20260214.3aadb7c"}
+{"ts":"2026-02-16T22:15:00+01:00","event":"audit_complete","files_scanned":25,"rules_applied":6,"issues_found":6,"critical":1,"medium":2,"low":3}
+{"ts":"2026-02-16T22:15:00+01:00","type":"meta_cycle","rules_checked":18,"triggered":2,"proposals_generated":0,"patterns_reviewed":5,"resolution_rate":0.74}

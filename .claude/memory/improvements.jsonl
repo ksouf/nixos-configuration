@@ -6,3 +6,5 @@
 {"ts":"2026-02-01T11:30:00+01:00","rule":"R5","type":"rule","description":"hardware.opengl.enable deprecation missing from nixos-deprecations.md","fix":"Added hardware.opengl.enable and nvidiaPatches to deprecations table","applied":true}
 {"ts":"2026-02-01T11:30:00+01:00","rule":"K1","type":"knowledge","description":"Claude Code hooks receive JSON on stdin, not env vars","fix":"Documented in post-edit.sh comments; hooks must use jq to parse tool_input","applied":true}
 {"ts":"2026-02-01T11:30:00+01:00","rule":"R2","type":"rule","description":"CLAUDE.md rules violated - missing lib in args, top-level with lib","fix":"Fixed in configuration.nix and git-profile.nix during audit fix cycle","applied":true}
+{"ts":"2026-02-16T22:10:00+01:00","rule":"R1","type":"knowledge","description":"Audit should flag pinned Node.js versions when newer LTS available","fix":"Added nodejs version check to audit checklist","applied":true}
+{"ts":"2026-02-16T22:10:00+01:00","rule":"K1","type":"knowledge","description":"autoUpgrade.allowReboot = true can cause unattended reboots; prefer false or set maintenance window","fix":"Logged as medium-severity audit issue","applied":true}

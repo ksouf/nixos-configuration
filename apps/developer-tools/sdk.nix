@@ -2,14 +2,14 @@
 
 {
   environment.systemPackages = [
-    pkgs-unstable.turbo
+    pkgs.turbo # pinned to stable: unstable 2.7.6 has turborepo-lib compile error
     pkgs-unstable.chromium
     pkgs-unstable.pandoc
     pkgs-unstable.nodejs_22
     pkgs-unstable.playwright
     pkgs-unstable.pnpm
     pkgs-unstable.terraform
-    pkgs-unstable.azure-cli
+    pkgs.azure-cli # pinned to stable: unstable 2.81.0 has broken azure.mgmt.web module
     pkgs-unstable.scaleway-cli
     pkgs-unstable.doctl
     pkgs-unstable.claude-code
