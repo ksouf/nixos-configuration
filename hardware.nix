@@ -56,6 +56,23 @@
     memoryPercent = 50;
   };
 
+  # Desktop with zram: prefer zram over disk swap, reduce SSD writes
+  boot.kernel.sysctl."vm.swappiness" = 10;
+
+  # Faster initrd decompression (default is gzip)
+  boot.initrd.compressor = "zstd";
+  boot.initrd.compressorArgs = [ "-19" "-T0" ];
+
+  # Dell XPS 9370: use Modern Standby (s2idle) instead of S3 deep sleep
+  # S3 deep is broken on this hardware — causes failed resume / cold reboots
+  boot.kernelParams = [
+    "mem_sleep_default=s2idle"
+    "nvme.noacpi=1"
+  ];
+
+  # Reduce SSD writes: noatime on root
+  fileSystems."/".options = [ "noatime" ];
+
   # Intel GPU - ensure proper graphics support
   hardware.graphics = {
     enable = true;
